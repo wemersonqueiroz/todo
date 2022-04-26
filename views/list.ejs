@@ -10,26 +10,32 @@
 </head>
 
 <body>
-  <h1>
-    <!-- to use EJS as html we need to use the <%= content %>
-  here we are linking the content with the information
-  at the res.render inside app.js -->
-    <%= kindOfDay%>
-  </h1>
-  <p>To-do List</p>
-  <ul>
-    <!-- Now when JS is needed, we use <% Js Code %>
-    and the <% tag need to be open and closed line by line. -->
+  <!-- to use EJS as html we need to use the  content 
+here we are linking the content with the information
+at the res.render inside app.js -->
+  <div class="box" id="heading">
+    <h1>
+      <%= kindOfDay %>
+    </h1>
+  </div>
+
+  <!-- Now when JS is needed, we use  Js Code 
+    and the tag need to be open and closed line by line. -->
+  <div class="box">
     <% for(var i=0; i<newListItems.length; i++) { %>
-      <li><input type="checkbox">
-        <%=newListItems[i]%>
-      </li>
+      <div class="item">
+        <input type="checkbox">
+        <p>
+          <%= newListItems[i] %>
+        </p>
+      </div>
       <% } %>
-  </ul>
-  <form class="" action="/" method="post">
-    <input type="text" name="newItem">
-    <button type="submit">Add</button>
-  </form>
+
+        <form class="item" action="/" method="post">
+          <input type="text" name="newItem" placeholder="Add New Task" autocomplete="off" />
+          <button type="submit">+</button>
+        </form>
+  </div>
 </body>
 
 </html>
