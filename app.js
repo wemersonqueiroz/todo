@@ -7,7 +7,7 @@ const app = express()
 
 app.use(express.static(__dirname + "/public"))
 
-var newTasks = []
+let newTasks = []
 
 app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -22,7 +22,7 @@ app.get("/", function (req, res) {
     month: "long",
   }
 
-  var day = today.toLocaleDateString("en-US", options)
+  let day = today.toLocaleDateString("en-US", options)
   //kindOfDay and newListItems are the connection where day and newTasks
   //content will be rendered at the list.ejs file.
   // "Key : Content"
